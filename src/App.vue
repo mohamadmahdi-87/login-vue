@@ -54,19 +54,6 @@ export default {
 			this.submitted = true;
 		},
 	},
-	/*************  ✨ Codeium Command ⭐  *************/
-	/**
-	 * Sets up reactive references for mouse coordinates and circle visibility,
-	 * and provides methods to handle mouse movement and hide the circle.
-	 *
-	 * Returns:
-	 *  - x: Reactive reference for the x-coordinate of the mouse.
-	 *  - y: Reactive reference for the y-coordinate of the mouse.
-	 *  - isCircleVisible: Reactive reference indicating if the circle is visible.
-	 *  - handleMouseMove: Function to update mouse coordinates and show the circle.
-	 *  - hideCircle: Function to hide the circle.
-	 */
-	/******  6a6d1c11-3988-4826-a5e5-27c08070ed23  *******/
 	setup() {
 		const x = ref(0);
 		const y = ref(0);
