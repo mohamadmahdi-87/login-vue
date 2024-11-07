@@ -3,55 +3,123 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'IRANSansX';
-  font-weight: 100;
-  src: url('./font/iransans/IRANSansX-Thin.woff2') format('woff2');
+	font-family: "IRANSansX";
+	font-weight: 100;
+	src: url("./font/iransans/IRANSansX-Thin.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'IRANSansX';
-  font-weight: 300;
-  src: url('./font/iransans/IRANSansX-Light.woff2') format('woff2');
+	font-family: "IRANSansX";
+	font-weight: 300;
+	src: url("./font/iransans/IRANSansX-Light.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'IRANSansX';
-  font-weight: 400;
-  src: url('./font/iransans/IRANSansX-Regular.woff2') format('woff2');
+	font-family: "IRANSansX";
+	font-weight: 400;
+	src: url("./font/iransans/IRANSansX-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'IRANSansX';
-  font-weight: 500;
-  src: url('./font/iransans/IRANSansX-Medium.woff2') format('woff2');
+	font-family: "IRANSansX";
+	font-weight: 500;
+	src: url("./font/iransans/IRANSansX-Medium.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'IRANSansX';
-  font-weight: 600;
-  src: url('./font/iransans/IRANSansX-DemiBold.woff2') format('woff2');
+	font-family: "IRANSansX";
+	font-weight: 600;
+	src: url("./font/iransans/IRANSansX-DemiBold.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'IRANSansX';
-  font-weight: 700;
-  src: url('./font/iransans/IRANSansX-Bold.woff2') format('woff2');
+	font-family: "IRANSansX";
+	font-weight: 700;
+	src: url("./font/iransans/IRANSansX-Bold.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'IRANSansX';
-  font-weight: 800;
-  src: url('./font/iransans/IRANSansX-ExtraBold.woff2') format('woff2');
+	font-family: "IRANSansX";
+	font-weight: 800;
+	src: url("./font/iransans/IRANSansX-ExtraBold.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'IRANSansX';
-  font-weight: 900;
-  src: url('./font/iransans/IRANSansX-Black.woff2') format('woff2');
+	font-family: "IRANSansX";
+	font-weight: 900;
+	src: url("./font/iransans/IRANSansX-Black.woff2") format("woff2");
 }
 
 @layer base {
-    body{
-        @apply font-iransans
-    }
+	body {
+		@apply font-iransans;
+	}
+	@keyframes cloud {
+		0%,
+		100% {
+			transform: translate(0, 0);
+		}
+		25% {
+			transform: translate(10px, -10px);
+		}
+		50% {
+			transform: translate(-10px, 10px);
+		}
+		75% {
+			transform: translate(10px, 10px);
+		}
+	}
+	@keyframes cloud2 {
+		0%,
+		100% {
+			transform: translate(0, 0);
+		}
+		25% {
+			transform: translate(-3px, 3px);
+		}
+		50% {
+			transform: translate(3px, -3px);
+		}
+		75% {
+			transform: translate(-3px, -3px);
+		}
+	}
+
+	.animate-cloud {
+		animation: cloud 10s ease-in-out infinite;
+	}
+	.animate-cloud2 {
+		animation: cloud2 10s ease-in-out infinite;
+	}
+
+	.container {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.box {
+		position: relative;
+		width: 300px;
+		height: 200px;
+		background-color: #f3f4f6;
+		border-radius: 8px;
+		padding: 20px;
+		overflow: hidden;
+	}
+
+	/* استایل دایره فید */
+	.circle {
+		position: absolute;
+		inset: 0px;
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(ellipse at center, #ffffff7e, rgba(255, 255, 255, 0));
+		border-radius: 50%;
+		pointer-events: none; /* دایره با موس تداخل ندارد */
+		transition: opacity 0.3s ease;
+		opacity: 0; /* مخفی در حالت عادی */
+	}
 }
